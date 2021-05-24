@@ -8,7 +8,20 @@ app.use("/articles", articleRouter);
 
 // create route
 app.get("/", (req, res) => {
-  res.render("index");
+  const articles = [
+    {
+      title: "test article",
+      createdAt: new Date(),
+      description: "test description",
+    },
+    {
+      title: "test article2",
+      createdAt: new Date(),
+      description: "test description2",
+    },
+  ];
+
+  res.render("articles/index", { articles: articles });
 });
 
 //create the port
