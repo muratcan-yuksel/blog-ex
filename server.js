@@ -12,6 +12,8 @@ app.set("view engine", "ejs");
 
 app.use("/articles", articleRouter);
 
+app.use(express.urlencoded({ extended: false }));
+
 // create route
 app.get("/", (req, res) => {
   const articles = [
